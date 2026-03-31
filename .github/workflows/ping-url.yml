@@ -1,0 +1,13 @@
+name: Ping URL
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+jobs:
+  curl-url:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call URL
+        run: curl -L --fail --show-error "http://f1250372.xsph.ru/run_signal_web_simple.php"
